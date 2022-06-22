@@ -1,0 +1,23 @@
+<!-- book table partial to inject into admin.ejs -->
+<% for (let comic of data) {%>
+<tr>
+  <td><%=comic.title %></td>
+  <td>
+    <!-- <form action="/admin-console/update-book/<%# comic._id%>" method="POST"> -->
+    <a href="/admin-console/update-book/<%= comic._id%>">
+      <button class="blue-button" type="submit">Edit</button>
+    </a>
+    <!-- </form> -->
+  </td>
+
+  <td>
+    <form
+      action="/books/<%= comic._id%>?_method=DELETE"
+      method="POST"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <button class="yellow-button" type="submit">Delete</button>
+    </form>
+  </td>
+</tr>
+<% } %>

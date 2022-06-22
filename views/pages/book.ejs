@@ -1,0 +1,31 @@
+<%- include('../partials/head') -%> <%- include('../partials/nav') -%>
+<!--comic card-->
+<div class="comic-card">
+  <div class="comic-card-top">
+    <h1 class="comic-card-title"><%= data.title %></h1>
+    <div class="comic-card-top-img">
+      <img src="../images/<%= data.image%>" />
+    </div>
+  </div>
+  <div class="comic-card-bottom">
+    <p class="comic-card-text">
+      <br />
+      <span class="comic-card-text-span">Title:</span>
+      <i><%= data.title %></i> <br /><br />
+      <span class="comic-card-text-span">Author:</span> <%= data.author %>
+      <br /><br />
+      <span class="comic-card-text-span">Publisher:</span> <%= data.publisher%>
+      <br /><br />
+      <span class="comic-card-text-span">Genre:</span><%= data.genre %>
+      <br /><br />
+      <span class="comic-card-text-span"> Number of pages:</span> <%= data.pages
+      %><br />
+      <br />
+      <span class="comic-card-text-span">Rating:</span><%= data.rating %>
+      <br /><br />
+      <span class="comic-card-text-span">Synopsis:</span><%= data.synopsis %>
+    </p>
+  </div>
+</div>
+<!--end comic card-->
+<%- include('../partials/footer') -%>

@@ -1,0 +1,83 @@
+<%- include('../partials/head') -%> <%- include('../partials/nav') -%>
+    <div class="content-container">
+      <h1>UPDATE COMIC</h1>
+      <!--Form Starts -->
+      <div class="content-div-center">
+        <form action="/books/<%= comic._id %>?_method=PUT" method="POST"> <!--is this right?-->
+          <label for="comic-image">Comic Image</label>
+        <input
+          type="text"
+          id="image"
+          name="image"
+          placeholder="comic"
+          value="<%= comic.image %>"
+        /><br /><br />
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value="<%=comic.title%>"
+            required
+          /><br><br>
+          <label for="author">Author:</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="Author"
+            value="<%=comic.author%>"
+            required
+          /><br><br>
+          <label for="publisher">Publisher:</label>
+          <select id="publisher" name="publisher">
+            <option value="select">select</option>
+            <option value="BOOM! Box">BOOM! Box</option>
+            <option value="DC Comics">DC Comics</option>
+            <option value="Harry N. Abrams">Harry N. Abrams</option>
+            <option value="Icon Books">Icon Books</option>
+            <option value="Image Comics">Image Comics</option>
+            <option value="Marvel">Marvel</option>
+            <option value="Simon & Schuster">Simon & Schuster</option>
+            <option value="Top Shelf Productions">Top Shelf Productions</option>
+            <option value="VIZ Media LLC">VIZ Media LLC</option>
+            <option value="<%= comic.publisher%>" selected> <%= comic.publisher%>  <!-- do i need a loop for this, to go through all the publishes? -->
+            </option>
+          </select>
+          <br><br>
+          <label for="genre">Genre:</label>
+          <input
+            type="text"
+            id="genre"
+            name="genre"
+            placeholder="Genre"
+            value="<%= comic.genre%>"
+          /><br><br>
+          <label for="pages">Number of pages:</label>
+          <input
+            type="text"
+            id="pages"
+            name="pages"
+            placeholder="Number of pages"
+            value="<%= comic.pages%>"
+          /><br><br>
+          <label for="rating">Rating:</label>
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            min="1"
+            max="5"
+            placeholder="<%= comic.rating %>"
+          /><br><br>
+          <label for="synopsis">Synopsis:</label>
+          <textarea name="synopsis" rows="1" cols="20">
+<%= comic.synopsis %></textarea
+          >
+          <br /><br /></div>
+      <!--button-->    
+          <input class="yellow-button button-center" type="submit" value="Submit" />
+        </form>
+    </div>
+    <!--form ends-->
+    <%- include('../partials/footer') -%>

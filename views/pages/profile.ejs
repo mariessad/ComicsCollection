@@ -1,0 +1,23 @@
+<!-- Form for creating user profile -->
+<%- include('../partials/head') -%> <%- include('../partials/nav') -%>
+<div class="content-container">
+  <h1>Create Profile</h1>
+  <div class="content-div-center">
+    <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+      <label for="username">Name</label>
+      <input type="text" id="username" name="username" placeholder="username" />
+      <label for="username">Email</label>
+      <input type="text" id="email" name="email" placeholder="email" />
+      <label for="birthday">Birthday</label>
+      <input type="date" id="birthday" name="birthday" placeholder="birthday" />
+      <label for="avatar">Avatar</label>
+      <input type="upload" id="avatar" name="avatar" />
+      <label for="twitter">Twitter</label>
+      <input type="text" id="twitter" name="twitter" placeholder="twitter" />
+      <label for="ig">Instagram</label>
+      <input type="text" id="ig" name="ig" placeholder="instagram" />
+      <input class="yellow-button" type="submit" value="submit" />
+    </form>
+  </div>
+</div>
+<%-include('../partials/footer') -%>
